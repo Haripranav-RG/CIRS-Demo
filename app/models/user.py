@@ -3,6 +3,7 @@ from app.db.base import Base
 
 class User(Base):
     __tablename__ = "users"
+    #demo change
 
     id = Column(Integer, primary_key=True, index=True)
     full_name = Column(String(100), nullable=False)
