@@ -1,0 +1,34 @@
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+DATABASE_URL = "mysql+pymysql://root:root@localhost:3306/cirs_db"
+
+engine = create_engine(
+    DATABASE_URL,
+    pool_pre_ping=True,
+    future=True
+)
+
+SessionLocal = sessionmaker(
+    autocommit=False,
+    autoflush=False,
+    bind=engine
+)
+
+
+# from sqlalchemy import create_engine
+# from sqlalchemy.orm import sessionmaker
+
+# DATABASE_URL ='mysql+pymysql://root:root@localhost:3306/cirs_db'
+
+# engine = create_engine(
+#     DATABASE_URL,
+#     pool_pre_ping=True
+# )
+
+# SessionLocal = sessionmaker(
+#     autocommit=False,
+#     autoflush=False,
+#     bind=engine
+# )
